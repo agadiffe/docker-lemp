@@ -7,5 +7,7 @@ based on official:
 - mariadb:10.1
 
 ## Config
-```cp mariadb.config.env.sample mariadb.config.env```
+```
+cp mariadb.config.env.sample mariadb.config.env
+```
 then, change the mariadb root password

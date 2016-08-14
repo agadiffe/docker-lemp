@@ -1,0 +1,25 @@
+nginx:
+    image: nginx:mainline-alpine
+    volumes:
+        - ./html:/var/www/html:ro
+        - ./nginx/conf/nginx.conf:/etc/nginx/nginx.conf:ro
+        - ./nginx/conf.d:/etc/nginx/conf.d:ro
+    ports:
+        - 80:80
+        - 443:443
+    links:
+        - php
+
+php:
+    image: php:fpm-alpine
+    volumes:
+        - ./html:/var/www/html
+    links:
+        - db
+
+db:
+    image: mariadb:10.1
+    volumes:
+        - /var/lib/mysql:/var/lib/mysql
+    env_file:
+        - ./mariadb.config.env

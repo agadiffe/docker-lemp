@@ -1,5 +1,7 @@
 nginx:
-    image: nginx:mainline-alpine
+    #image: nginx:mainline-alpine
+    build: .
+    dockerfile: nginx-1.11.3-alpine.dockerfile
     volumes:
         - ./html:/var/www/html:ro
         - ./nginx/conf/nginx.conf:/etc/nginx/nginx.conf:ro

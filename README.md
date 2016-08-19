@@ -20,4 +20,7 @@ dockerfile: nginx-1.11.3-alpine.dockerfile
 ```
 cp mariadb.config.env.sample mariadb.config.env
 ```
-then, change the mariadb root password
+```
+cp php.config.env.sample php.config.env
+```
+then, change default value ...

@@ -6,8 +6,8 @@ ENV NGINX_VERSION 1.11.3
 
 RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 	&& CONFIG="\
-		--user=www-data \
-		--group=www-data \
+		--user=nginx \
+		--group=nginx \
 		--prefix=/etc/nginx \
 		--sbin-path=/usr/sbin/nginx \
 		--modules-path=/usr/lib/nginx/modules \
@@ -48,8 +48,8 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 		--with-http_v2_module \
 		--with-ipv6 \
 	" \
-	&& addgroup -S www-data \
-	&& adduser -D -S -h /var/cache/nginx -s /sbin/nologin -G www-data www-data \
+	&& addgroup -S nginx \
+	&& adduser -D -S -h /var/cache/nginx -s /sbin/nologin -G nginx nginx \
 	&& apk add --no-cache --virtual .build-deps \
 		gcc \
 		libc-dev \

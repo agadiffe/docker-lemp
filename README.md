@@ -22,8 +22,6 @@ build:
 ### environment variables
 ```
 cp mariadb.config.env.sample mariadb.config.env
-```
-```
 cp php.config.env.sample php.config.env
 ```
 then, change default value ...

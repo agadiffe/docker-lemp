@@ -2,9 +2,6 @@ version: '2'
 
 services:
     nginx:
-        build: 
-            context: .
-            dockerfile: nginx-1.11.3-alpine.dockerfile
         image: nginx:1.11.3-alpine
         volumes:
             - ./html:/var/www/html:ro
